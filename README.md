@@ -10,8 +10,8 @@ One of the most practical ways to do this involves creating a *dictionary/hashma
 
 > * Create a dictionary variable and initialize it to a Javascript object.
 > * Loop through the string and check if the current character is present in the dictionary:
->   * If the current character is undefined within the dictionary, set that character to 1.  
->   * If the current character is already defined within the dictionary, increase it by one.
+>   * If the current character is undefined within the dictionary, set "**dictionary[character]**" to **1**.  
+>   * If the current character is defined within the dictionary, increase the current value of "**dictionary[character]**" by one.
 > * Return the dictionary.
 
 #### Here's an example of how to do that in Javascript.
@@ -44,4 +44,3 @@ function createDictionary(str) {
 
 This simple tactic is *extremely useful* and part of the solution of many programming challenges. Anybody seeking to be confident and successful in coding interviews should learn this technique, specially if they are expecting questions about algorithms.
 
-...Text unfinished.
