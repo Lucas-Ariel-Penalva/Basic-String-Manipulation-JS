@@ -49,15 +49,15 @@ This simple tactic is *extremely useful* and part of the solution of many progra
 
 There are many programming tasks that can be made easier by referencing an alphabet. To name a few:
 
-* Rotation ciphers, like [**Caesar Cipher**](https://en.wikipedia.org/wiki/Caesar_cipher) and all it's variations.
+* Rotation ciphers, like [**Caesar Cipher**](https://en.wikipedia.org/wiki/Caesar_cipher) and all its variations.
 * Detection of [**Pangrams**](https://en.wikipedia.org/wiki/Pangram) and alphabetical substrings.
 * Exclusively checking the keys of a dictionary that are letters.
-* Solving problems in which each letter has a numeric value associated with it's position in the alphabet.
+* Solving problems in which each letter has a numeric value associated with its position in the alphabet.
 
 All of these are relatively common coding challenges and possible interview questions, and working with an alphabet can be part of a viable solution. For example:
 
 * For rotation ciphers, you have to change each character in the string by the character that is *X index positions* ahead or before in the alphabet.
-* To detect pangrams or alphabetical substrings, you can loop over the alphabet to check if all it's letters are present in the string you are inspecting.
+* To detect pangrams or alphabetical substrings, you can loop over the alphabet to check if all its letters are present in the string you are inspecting.
 * For problems in which letters have a value related to their alphabet position, you have to change each letter in the input string by the *index* of that letter in the alphabet array/string you created.
 
 #### And so on...
@@ -69,7 +69,7 @@ One could simply do this:
 const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 ```
 
-The problem is that manually typing the alphabet can be unreliable, as each of the 26 key strokes introduces the possibility of an error that is harder to detect than a typo on a Javascript keyword. If you write the alphabet wrong, your function is likely to run without throwing any exceptions but your program will produce the wrong output.
+The problem is that manually typing the alphabet can be unreliable, as each of the 26 keystrokes introduces the possibility of an error that is harder to detect than a typo on a Javascript keyword. If you write the alphabet wrong, your function is likely to run without throwing any exceptions, but your program will produce the wrong output.
 
 A more reliable solution involves using the fact that the alphabet begins at *97* on [ASCII code](https://www.ascii-code.com/), and knowing that you can access those letters using [String.fromCharCode()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode).
 
