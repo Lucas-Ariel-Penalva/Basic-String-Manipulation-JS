@@ -44,8 +44,49 @@ function createDictionary(str) {
 
 This simple tactic is *extremely useful* and part of the solution of many programming challenges. Anybody seeking to be confident and successful in coding interviews should learn this technique, specially if they are expecting questions about algorithms.
 
+### 2) Creating a character array
 
-### 2) Generating an alphabet reliably
+Since strings are immutable, many solutions require making a linear pass to read the input string while you build the output. However, on some occassions it might be easier to transform a string into an array to work with it. Once you transformed a string into an array, you can perform a map or filter it as desired before you put it back together.
+
+It's very common to use [*String.prototype.split()*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) to transform a string into an array:
+
+```javascript
+const str = "Hello world";
+
+const charArray = str.split("");
+const wordArray = str.split(" ");
+
+// Using an empty string as the separator on Split, charArray = [ 'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd' ] 
+// Using a space as the separator on Split, wordArray = ['Hello', "world"]
+```
+
+#### ⚠ However, [**using split with an empty string as the separator can introduce bugs**](https://stackoverflow.com/questions/4547609/how-to-get-character-array-from-a-string/34717402#34717402) if the string has symbols, emojis or other special characters.
+
+#### Instead of using *split*, you can **deestructure the string inside an array literal**, which is cleaner and less likely to produce bugs:
+
+```javascript
+const str = "Hello world";
+
+const charArray = [...str];
+
+// Destructuring the string, charArray =  [ 'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd' ] 
+
+```
+
+You can see the usefulness of using the [*destructuring assignment*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) instead of *split* here:
+
+```javascript
+const str = "🦋💖🔆";
+
+const destructureCharArray = [...str];
+
+const splitCharArray = str.split("");
+
+// destructureCharArray = [ '🦋', '💖', '🔆' ]
+// splitCharArray will be [ '\ud83e', '\udd8b', '\ud83d', '\udc96', '\ud83d', '\udd06' ] or ['�', '�', '�', '�', '�', '�']
+```
+
+### 3) Generating an alphabet reliably
 
 There are many programming tasks that can be made easier by referencing an alphabet. To name a few:
 
