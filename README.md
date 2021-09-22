@@ -1,4 +1,6 @@
-# Essential String manipulation techniques
+# String manipulation techniques
+
+&nbsp;
 
 ### 1) Creating a Dictionary with character counts
 
@@ -44,9 +46,11 @@ function createDictionary(str) {
 
 This simple tactic is *extremely useful* and part of the solution of many programming challenges. Anybody seeking to be confident and successful in coding interviews should learn this technique, specially if they are expecting questions about algorithms.
 
+&nbsp;
+
 ### 2) Creating a character array
 
-Since strings are immutable, many solutions require making a linear pass to read the input string while you build the output. However, on some occassions it might be easier to transform a string into an array to work with it. Once you transformed a string into an array, you can perform a map or filter it as desired before you put it back together.
+Since strings are immutable, many solutions require making a linear pass to read the input string while you build the output. However, on some occassions it might be easier to transform a string into an array to work with it. Once you transformed a string into an array, you use *map* over it or *filter* it as desired before you put it back together with *join*.
 
 It's very common to use [*String.prototype.split()*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) to transform a string into an array:
 
@@ -54,6 +58,7 @@ It's very common to use [*String.prototype.split()*](https://developer.mozilla.o
 const str = "Hello world";
 
 const charArray = str.split("");
+
 const wordArray = str.split(" ");
 
 // Using an empty string as the separator on Split, charArray = [ 'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd' ] 
@@ -78,14 +83,14 @@ You can see the usefulness of using the [*destructuring assignment*](https://dev
 ```javascript
 const str = "🦋💖🔆";
 
-const destructureCharArray = [...str];
+const destructureCharArr = [...str];
 
-const splitCharArray = str.split("");
+const splitCharArr = str.split("");
 
-// destructureCharArray = [ '🦋', '💖', '🔆' ]
-// splitCharArray will be [ '\ud83e', '\udd8b', '\ud83d', '\udc96', '\ud83d', '\udd06' ] or ['�', '�', '�', '�', '�', '�']
+// destructureCharArr = [ '🦋', '💖', '🔆' ]
+// splitCharArr will be ['�', '�', '�', '�', '�', '�'] or [ '\ud83e', '\udd8b', '\ud83d', '\udc96', '\ud83d', '\udd06' ]
 ```
-
+&nbsp;
 ### 3) Generating an alphabet reliably
 
 There are many programming tasks that can be made easier by referencing an alphabet. To name a few:
