@@ -62,8 +62,8 @@ const charArray = str.split("");
 
 const wordArray = str.split(" ");
 
-// Using an empty string as the separator on Split, charArray = [ 'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd' ] 
-// Using a space as the separator on Split, wordArray = ['Hello', "world"]
+// Using an empty string as the separator on Split, charArray = [ 'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd' ];
+// Using a space as the separator on Split, wordArray = ['Hello', 'world'];
 ```
 
 #### ⚠ However, [**using split with an empty string as the separator can introduce bugs**](https://stackoverflow.com/questions/4547609/how-to-get-character-array-from-a-string/34717402#34717402) if the string has symbols, emojis or other special characters.
@@ -75,7 +75,7 @@ const str = "Hello world";
 
 const charArray = [...str];
 
-// Destructuring the string, charArray =  [ 'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd' ] 
+// Destructuring the string, charArray =  [ 'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd' ];
 
 ```
 
@@ -88,8 +88,8 @@ const destructureCharArr = [...str];
 
 const splitCharArr = str.split("");
 
-// destructureCharArr = [ '🦋', '💖', '🔆' ]
-// splitCharArr will be ['�', '�', '�', '�', '�', '�'] or [ '\ud83e', '\udd8b', '\ud83d', '\udc96', '\ud83d', '\udd06' ]
+// destructureCharArr = [ '🦋', '💖', '🔆' ];
+// splitCharArr will be ['�', '�', '�', '�', '�', '�'] or [ '\ud83e', '\udd8b', '\ud83d', '\udc96', '\ud83d', '\udd06' ];
 ```
 &nbsp;
 ### 3) Generating an alphabet reliably
@@ -141,7 +141,7 @@ If you have to solve any task involving [**substitution ciphers**](https://en.wi
 ```javascript
 const alphabet = [...Array(26)].map((c,i) => String.fromCharCode(i + 97));
 
-['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 //Index of 'u' in alphabet is 20;
 
@@ -158,7 +158,7 @@ const rotatedU = alphabet[20 + 13] // rotatedU === undefined;
 ```javascript
 const alphabet = [...Array(26)].map((c,i) => String.fromCharCode(i + 97));
 
-['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 const indexOfU = alphabet.indexOf('u') //Index of 'u' in alphabet is 20;
 
@@ -166,7 +166,7 @@ const rotation = 13;
 
 const rotatedU = alphabet[(indexOfU + rotation) % alphabet.length] // rotatedU === 'h';
 
-const rotatedA = alphabet[(alphabet.indexOf('a') + rotation) % alphabet.length] // rotatedA === 'n'
+const rotatedA = alphabet[(alphabet.indexOf('a') + rotation) % alphabet.length] // rotatedA === 'n';
 
 ```
 In the case of "rotatedA" you can see that using modulus to rotate elements whose *(index + rotation)* doesn't exceed the array length is perfectly fine, so **creating a helper function that uses modulus to rotate every letter is a safe approach**.
