@@ -1,6 +1,6 @@
 # String manipulation techniques
 
-#### These techniques can be very useful in coding problems and interviews but not necessarily in production because of readability concerns.
+#### These techniques can be useful in coding challenges and interviews but not necessarily in production because of readability concerns.
 &nbsp;
 
 ### 1) Creating a Dictionary with character counts
@@ -120,8 +120,6 @@ The problem is that manually typing the alphabet can be unreliable, as each of t
 
 A more reliable solution involves using the fact that the alphabet begins at *97* on [ASCII code](https://www.ascii-code.com/), and knowing that you can access those letters using [String.fromCharCode()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode).
 
-#### The code is:
-
 ```javascript
 const alphabet = [...Array(26)].map((c,i) => String.fromCharCode(i + 97));
 ```
@@ -170,5 +168,3 @@ const rotatedA = alphabet[(alphabet.indexOf('a') + rotation) % alphabet.length] 
 
 ```
 In the case of "rotatedA" you can see that using modulus to rotate elements whose *(index + rotation)* doesn't exceed the array length is perfectly fine, so **creating a helper function that uses modulus to rotate every letter is a safe approach**.
-
-### Text unfinished...
